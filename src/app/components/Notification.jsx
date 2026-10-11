@@ -1,5 +1,29 @@
-const Notification = () => {
-  return <></>;
+const Notification = ({ hasNotification = "true" }) => {
+  return (
+    <svg
+      height="25px"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1 10.5H14M2.5 10.5V5.5C2.5 2.73858 4.73858 0.5 7.5 0.5C10.2614 0.5 12.5 2.73858 12.5 5.5V10.5M5.5 12V12.5C5.5 13.6046 6.39543 14.5 7.5 14.5C8.60457 14.5 9.5 13.6046 9.5 12.5V12"
+        stroke="var(--color-text)"
+        strokeWidth="1.3px"
+      />
+      {hasNotification && (
+        <circle
+          r="3"
+          cx="12"
+          cy="3"
+          fill="var(--color-accent)"
+          stroke="var(--color-background)"
+        />
+      )}
+    </svg>
+  );
 };
 
 export default Notification;
+
+// License: MIT. Made by teenyicons: https://github.com/teenyicons/teenyicons -->
