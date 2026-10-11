@@ -5,6 +5,7 @@
   --foreground: #171717;
   --accent: #f2968f;
   --text: #0a0a0a;
+  --s-spacing: 20px;
 }
 
 @theme inline {

@@ -5,7 +5,7 @@ const BreedCard = () => {
     <>
       <p className="text-blue-500">Test Mit Component...</p>
 
-      <Image />
+      {/* <Image /> */}
     </>
   );
 };
