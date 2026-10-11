@@ -5,6 +5,7 @@
   --foreground: #171717;
   --accent: #f2968f;
   --text: #0a0a0a;
+  --text-muted: #c90202;
   --s-spacing: 20px;
 }
 
@@ -16,6 +17,7 @@
   --font-mono: var(--font-geist-mono);
 
   --color-text: var(--text);
+  --color-muted: var(--muted);
   --color-accent: var(--accent);
 }
 

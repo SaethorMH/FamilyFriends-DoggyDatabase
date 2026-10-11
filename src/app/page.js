@@ -1,7 +1,6 @@
 import Link from "next/link";
-import Logo from "./components/Logo";
-import Notification from "./components/Notification";
 import BreedCard from "./components/BreedCard";
+import NavIcon from "./components/NavIcon";
 
 export default function ListView() {
   return (
@@ -9,6 +8,11 @@ export default function ListView() {
       <BreedCard />
       <h2>ListView</h2>
       <Link href="/detailview">Go to DetailView</Link>
+      <NavIcon dest="/detailview" icon="house" />
+      <NavIcon dest="/detailview" icon="star" />
+
+      <NavIcon dest="/detailview" icon="comment" />
+      <NavIcon dest="/detailview" icon="user" chosen />
     </>
   );
 }

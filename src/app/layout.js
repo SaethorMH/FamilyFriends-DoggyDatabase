@@ -18,6 +18,12 @@ const geistMono = Geist_Mono({
 //   subsets: ["latin"],
 // });
 
+/////////////////////////////////////
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+/////////////////////////////////////
+
 export const metadata = {
   title: "Family Friends",
   description:
