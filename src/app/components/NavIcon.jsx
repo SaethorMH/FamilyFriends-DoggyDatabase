@@ -1,5 +1,7 @@
-import Link from "next/link";
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -15,7 +17,11 @@ const icons = {
   comment: faComment,
 };
 
-const NavIcon = ({ dest, icon, chosen = false }) => {
+let NavIcon = ({ dest, icon }) => {
+  const pathname = usePathname();
+
+  const chosen = dest === "/" ? pathname === "/" : pathname.startsWith(dest);
+
   return (
     <Link href={dest}>
       <FontAwesomeIcon
