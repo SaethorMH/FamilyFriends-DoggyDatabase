@@ -31,7 +31,7 @@
 
 body {
   background: var(--background);
-  background: repeating-linear-gradient(90deg, white 0 5px, black 5px 10px);
+  /* background: repeating-linear-gradient(90deg, white 0 5px, black 5px 10px); */
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

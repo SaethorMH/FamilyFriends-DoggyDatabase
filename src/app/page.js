@@ -6,6 +6,9 @@ export default function ListView() {
   return (
     <>
       <BreedCard />
+      <BreedCard />
+      <BreedCard />
+      <BreedCard />
       <h2>ListView</h2>
       <Link href="/detailview">Go to DetailView</Link>
     </>
