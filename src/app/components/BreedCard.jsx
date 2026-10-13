@@ -8,7 +8,7 @@ const BreedCard = ({ breed = {} }) => {
         <h3 className="font-bold text-[15px] ">
           {breed.name ?? "placeholderName"}
         </h3>
-        <p className="font-medium text-[#333333] text-[12px] wrap-break-word w-[11ch]">
+        <p className="font-medium text-gray-500 text-[12px]/[0.6lh] wrap-break-word w-[11ch] ">
           {breed.from ?? "placeholderFrom"}
         </p>
       </div>

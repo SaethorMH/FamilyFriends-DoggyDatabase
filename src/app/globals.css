@@ -15,7 +15,7 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
+  --font: var(--font-manrope);
   --color-text: var(--text);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
@@ -33,5 +33,5 @@ body {
   background: var(--background);
   /* background: repeating-linear-gradient(90deg, white 0 5px, black 5px 10px); */
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font), Arial, Helvetica, sans-serif;
 }
