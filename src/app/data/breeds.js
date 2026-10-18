@@ -48,7 +48,7 @@ export const breeds = [
       "Elegant, silky-coated spaniel with large, soulful eyes and a famously sweet temperament. Adaptable and people-oriented, it is equally happy on a long countryside walk or curled up on the sofa. Gets along well with children and other pets, and does not like to be left alone for long.",
     history:
       "Descended from small spaniels kept as lap dogs by the English royal court, especially under King Charles II. The modern breed was revived in the 1920s after the old type had nearly vanished.",
-    traits: ["Gentle", "Affectionate", "Adaptable", "Sociable", "Eager"],
+    traits: ["Gentle", "Affectionate", "Sociable", "Eager"],
   },
   {
     id: "5",
@@ -100,7 +100,7 @@ export const breeds = [
       "Large, tri-colored farm dog with a calm, good-natured temperament and a thick, fluffy coat. Affectionate and eager to please, it thrives on family time and cooler weather, and is happiest when it can lean against someone. It is slow to mature and stays puppy-like for years, so expect a big, clumsy goofball for a long time.",
     history:
       "Originated in the farmlands around Bern, Switzerland, where it herded cattle, guarded farms, and pulled small carts to market. The breed nearly disappeared in the late 1800s, before a group of enthusiasts worked to save it.",
-    traits: ["Gentle", "Loyal", "Good-natured", "Affectionate", "Patient"],
+    traits: ["Gentle", "Loyal", "Good-natured", "Patient"],
   },
   {
     id: "9",

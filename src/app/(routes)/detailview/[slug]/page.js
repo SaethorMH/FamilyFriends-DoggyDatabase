@@ -5,13 +5,13 @@ import { breeds } from "@/app/data/breeds";
 
 import FavoriteButton from "@/app/components/FavoriteButton";
 const traitColors = [
-  "bg-green-200 text-green-950",
-  "bg-yellow-200 text-yellow-950",
-  "bg-orange-200 text-orange-950",
-  "bg-red-200 text-red-950",
-  "bg-purple-200 text-purple-950",
-  "bg-blue-200 text-blue-950",
-  "bg-violet-200 text-violet-950",
+  "bg-(--green-light) text-(--green-dark)",
+  "bg-(--yellow-light) text-(--yellow-dark)",
+  "bg-(--orange-light) text-(--orange-dark)",
+  "bg-(--red-light) text-(--red-dark)",
+  "bg-(--purple-light) text-(--purple-dark)",
+  "bg-(--blue-light) text-(--blue-dark)",
+  "bg-(--violet-light) text-(--violet-dark)",
 ];
 export default async function DetailView({ params }) {
   const { slug } = await params;
@@ -31,7 +31,7 @@ export default async function DetailView({ params }) {
         />
         <Link
           href="/"
-          className="bg-white text-(--color-text) text-5xl col-1 row-1 place-self-start m-(--s-spacing) w-15 h-15 rounded-full p-1 text-center"
+          className="bg-white text-(--color-text) font-black text-2xl col-1 row-1 place-self-start m-(--s-spacing) w-10 h-10 rounded-full p-1 text-center"
         >
           {"<"}
         </Link>

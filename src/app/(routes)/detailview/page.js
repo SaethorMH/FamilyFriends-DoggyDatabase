@@ -1,10 +1,11 @@
-import Link from "next/link";
+import { breeds } from "@/app/data/breeds";
+import FavoritesList from "@/app/components/FavoritesList";
 
 const DetailView = () => {
   return (
     <>
-      <h1>DetailView</h1>
-      <Link href="/">Back to ListView</Link>
+      <h1>Favorites</h1>
+      <FavoritesList breeds={breeds} />
     </>
   );
 };

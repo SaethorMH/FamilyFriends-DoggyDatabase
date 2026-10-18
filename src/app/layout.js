@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col max-w-md">
         <Header />
-        <main className="mx-auto">{children}</main>
+        <main className="mx-(--s-spacing) min-h-screen">{children}</main>
         <NavBar />
       </body>
     </html>

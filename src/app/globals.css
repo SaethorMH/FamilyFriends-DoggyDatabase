@@ -7,6 +7,28 @@
   --text: #0a0a0a;
   --text-muted: #c90202;
   --s-spacing: 20px;
+
+  /*TRAIT COLORS*/
+  --green-light: #c5e59c;
+  --green-dark: var(--color-green-950);
+
+  --yellow-light: #f1e689;
+  --yellow-dark: var(--color-yellow-950);
+
+  --orange-light: var(--color-orange-200);
+  --orange-dark: var(--color-orange-950);
+
+  --red-light: #eda8b3;
+  --red-dark: var(--color-red-950);
+
+  --purple-light: var(--color-purple-200);
+  --purple-dark: var(--color-purple-950);
+
+  --blue-light: #acd7ff;
+  --blue-dark: var(--color-blue-950);
+
+  --violet-light: var(--color-violet-200);
+  --violet-dark: var(--color-violet-950);
 }
 
 @theme inline {

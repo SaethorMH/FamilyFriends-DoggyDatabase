@@ -39,8 +39,6 @@ export default function FavoriteButton({
     <button
       type="button"
       onClick={toggle}
-      aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-      aria-pressed={isFavorite}
       className={`grid place-items-center rounded-full bg-[#FEFEFE]/25 text-white ${className}`}
     >
       <FontAwesomeIcon icon={isFavorite ? Favorite : notFavorite} />
