@@ -37,9 +37,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${monrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col max-w-md">
         <Header />
-        <main>{children}</main>
+        <main className="mx-auto">{children}</main>
         <NavBar />
       </body>
     </html>

@@ -6,10 +6,14 @@ import { breeds } from "./data/breeds";
 
 export default function ListView() {
   return (
-    <>
+    <div className="grid grid-cols-2 gap-(--s-spacing) mx-auto">
       {breeds.map((breed) => (
-        <BreedCard key={breed.id} breed={breed} />
+        <BreedCard
+          className="shrink-0 grow-0 basis-full"
+          key={breed.id}
+          breed={breed}
+        />
       ))}
-    </>
+    </div>
   );
 }
