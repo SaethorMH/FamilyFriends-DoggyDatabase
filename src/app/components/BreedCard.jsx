@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BreedCard = ({ breed = {} }) => {
   return (
-    <div className="flex flex-col w-40 rounded-2xl gap-2 shadow">
+    <div className="flex flex-col w-40 rounded-2xl gap-2 shadow shrink ">
       <BreedCardImage breed={breed} isFavorite="false" />
       <Link href={`/detailview/${breed.slug}`}>
         <div className="flex flex-col gap-1 px-2.75 mb-3.5">

@@ -51,8 +51,8 @@ export default async function DetailView({ params }) {
         </div>
       </div>
 
-      <h1>{breed.name}</h1>
-      <ul className="flex justify-around">
+      <h1 className="text-[28px] font-bold mt-4"> {breed.name}</h1>
+      <ul className="flex justify-around flex-wrap my-6">
         {breed.traits.map((trait, i) => (
           <li
             key={trait}

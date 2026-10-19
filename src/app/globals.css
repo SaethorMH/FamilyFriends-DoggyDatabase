@@ -56,4 +56,5 @@ body {
   /* background: repeating-linear-gradient(90deg, white 0 5px, black 5px 10px); */
   color: var(--foreground);
   font-family: var(--font), Arial, Helvetica, sans-serif;
+  margin: auto;
 }
