@@ -4,38 +4,21 @@ import NavIcon from "./components/NavIcon";
 import SearchBar from "./components/SearchBar";
 // import { breeds } from "./data/breeds";
 import { Suspense } from "react";
-export default function ListView() {
+import Breedlist from "./components/Breedlist";
+export default async function ListView({ searchParams }) {
+  console.log(await searchParams);
+  const { q } = await searchParams;
   return (
     <>
       <SearchBar />
-      <Suspense fallback="Loading dogs...">
+      <Suspense key={q} fallback="Loading dogs...">
         {/* <div className="grid grid-cols-2 gap-(--s-spacing) mx-auto">
           {breeds.map((breed) => (
             <BreedCard className="shrink" key={breed.id} breed={breed} />
           ))}
         </div> */}
-        <FetchData />
+        <Breedlist q={q} />
       </Suspense>
     </>
   );
 }
-
-const FetchData = async () => {
-  const response = await fetch("https://api.thedogapi.com/v1/breeds", {
-    headers: { "x-api-key": process.env.API_KEY },
-  });
-
-  if (!response.ok) {
-    return <p>Couldn't load breeds ({response.status}).</p>;
-  }
-
-  const breeds = await response.json();
-  console.log(breeds);
-  return (
-    <div className="grid grid-cols-2 gap-(--s-spacing) mx-auto">
-      {breeds.map((breed) => (
-        <BreedCard className="shrink" key={breed.id} breed={breed} />
-      ))}
-    </div>
-  );
-};

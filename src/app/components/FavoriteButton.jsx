@@ -30,8 +30,10 @@ export default function FavoriteButton({
     const next = !isFavorite;
     const favorites = readFavorites().filter((s) => s !== slug);
     if (next) favorites.push(slug);
+
     localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
     setIsFavorite(next);
+    console.log(favorites);
   }
 
   return (
