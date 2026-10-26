@@ -1,7 +1,14 @@
-import { breeds } from "@/app/data/breeds";
 import FavoritesList from "@/app/components/FavoritesList";
 
-const DetailView = () => {
+const FetchData = async () => {
+  const response = await fetch("https://api.thedogapi.com/v1/breeds", {
+    headers: { "x-api-key": process.env.API_KEY },
+  });
+
+  if (!response.ok) {
+    return <p>Couldn't load breeds ({response.status}).</p>;
+  }
+  const breeds = await response.json();
   return (
     <>
       <h1>Favorites</h1>
@@ -10,4 +17,4 @@ const DetailView = () => {
   );
 };
 
-export default DetailView;
+export default FetchData;

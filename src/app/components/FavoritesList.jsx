@@ -1,23 +1,26 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import BreedCardImage from "@/app/components/BreedCardImage";
 
 export default function FavoritesList({ breeds }) {
-  const [favoriteSlugs, setFavoriteSlugs] = useState(null); // null = not loaded yet
+  const [favoriteIds, setFavoriteIds] = useState(null); // null = not loaded yet
 
   useEffect(() => {
     try {
-      setFavoriteSlugs(JSON.parse(localStorage.getItem("favorites")) ?? []);
+      const stored = JSON.parse(localStorage.getItem("favorites"));
+      setFavoriteIds(Array.isArray(stored) ? stored.map(String) : []);
     } catch {
-      setFavoriteSlugs([]);
+      setFavoriteIds([]);
     }
   }, []);
 
-  // Avoid flashing "no favorites" before localStorage has been read
-  if (favoriteSlugs === null) return null;
+  if (favoriteIds === null) return null;
 
-  const favoriteBreeds = breeds.filter((b) => favoriteSlugs.includes(b.slug));
+  const favoriteBreeds = breeds.filter((b) =>
+    favoriteIds.includes(String(b.id)),
+  );
 
   if (favoriteBreeds.length === 0) {
     return <p>No favorites yet. Tap the star on a breed to add one.</p>;
@@ -26,7 +29,7 @@ export default function FavoritesList({ breeds }) {
   return (
     <ul className="grid grid-cols-2 gap-4">
       {favoriteBreeds.map((breed) => (
-        <li key={breed.slug}>
+        <li key={breed.id}>
           <BreedCardImage breed={breed} />
           <p>{breed.name}</p>
         </li>

@@ -22,7 +22,6 @@ export default function FavoriteButton({
 }) {
   const [isFavorite, setIsFavorite] = useState(initialFavorite);
 
-  // Read localStorage after mount (it doesn't exist on the server)
   useEffect(() => {
     if (readFavorites().includes(slug)) setIsFavorite(true);
   }, [slug]);
