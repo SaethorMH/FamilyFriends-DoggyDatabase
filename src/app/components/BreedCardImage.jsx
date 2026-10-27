@@ -20,6 +20,7 @@ const BreedCardImage = ({ breed = {} }) => {
       </Link>
       <FavoriteButton
         slug={String(breed.id)}
+        id={breed.image.id}
         className="col-start-1 row-start-1 justify-self-end self-start m-2 size-6"
       />
     </div>

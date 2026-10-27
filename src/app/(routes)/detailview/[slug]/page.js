@@ -50,6 +50,7 @@ export default async function DetailView({ params }) {
         </Link>
         <FavoriteButton
           slug={String(breed.id)}
+          id={breed.image.id}
           className="col-1 row-1 self-start justify-self-end size-10 m-(--s-spacing)"
         />
         <div className=" flex gap-4 p-2 col-1 row-1 self-end m-(--s-spacing) mr-auto backdrop-blur-md rounded-2xl">
