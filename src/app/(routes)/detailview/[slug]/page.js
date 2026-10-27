@@ -39,7 +39,7 @@ export default async function DetailView({ params }) {
             height={360}
             alt={`Picture of ` + breed.name}
             // style={{ viewTransitionName: `img-${breed.id}` }}
-            className="rounded-4xl col-1 row-1"
+            className="rounded-4xl col-1 row-1 object-cover w-full"
           />
         </Suspense>
         <Link
