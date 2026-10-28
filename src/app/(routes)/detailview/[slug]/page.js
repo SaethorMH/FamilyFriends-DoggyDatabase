@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 // import { breeds } from "@/app/data/breeds";
 import { Suspense } from "react";
-
+import { readFavorites } from "@/app/actions/actions";
 import FavoriteButton from "@/app/components/FavoriteButton";
 const traitColors = [
   "bg-(--green-light) text-(--green-dark)",
@@ -16,19 +16,19 @@ const traitColors = [
 ];
 export default async function DetailView({ params }) {
   const { slug: id } = await params;
-  const response = await fetch(`https://api.thedogapi.com/v1/breeds/${id}`, {
-    headers: { "x-api-key": process.env.API_KEY },
-  });
-  console.log(
-    "id:",
-    id,
-    "status:",
-    response.status,
-    await response.clone().text(),
-  );
+
+  const [response, favorites] = await Promise.all([
+    fetch(`https://api.thedogapi.com/v1/breeds/${id}`, {
+      headers: { "x-api-key": process.env.API_KEY },
+    }),
+    readFavorites().catch(() => []),
+  ]);
 
   if (!response.ok) notFound();
   const breed = await response.json();
+
+  const imageId = breed.image?.id ?? breed.reference_image_id;
+  const isFavorite = favorites.some((fav) => fav.image_id === imageId);
   return (
     <>
       <div className="grid  max-w-md">
@@ -48,11 +48,13 @@ export default async function DetailView({ params }) {
         >
           {"<"}
         </Link>
-        <FavoriteButton
-          slug={String(breed.id)}
-          id={breed.image.id}
-          className="col-1 row-1 self-start justify-self-end size-10 m-(--s-spacing)"
-        />
+        {imageId && (
+          <FavoriteButton
+            id={imageId}
+            favorite={isFavorite ? "isFavorite" : "notFavorite"}
+            className="col-1 row-1 self-start justify-self-end size-10 m-(--s-spacing)"
+          />
+        )}
         <div className=" flex gap-4 p-2 col-1 row-1 self-end m-(--s-spacing) mr-auto backdrop-blur-md rounded-2xl">
           <Image
             src={breed.image.url ?? "/dummydog.jpg"}

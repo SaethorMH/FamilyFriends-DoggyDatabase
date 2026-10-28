@@ -1,18 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as notFavorite } from "@fortawesome/free-regular-svg-icons";
 import { faStar as Favorite } from "@fortawesome/free-solid-svg-icons";
 import { toggleFav } from "../actions/actions";
-
+import { readFavorites } from "../actions/actions";
 export default function FavoriteButton({
   slug,
-  initialFavorite = false,
   className = "",
   id,
+  favorite = "",
 }) {
-  const [isFavorite, setIsFavorite] = useState(initialFavorite);
+  const [isFavorite, setIsFavorite] = useState(favorite === "isFavorite");
+  // readFavorites();
+
   return (
     <FontAwesomeIcon
       onClick={() => {

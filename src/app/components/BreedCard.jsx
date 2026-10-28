@@ -1,10 +1,10 @@
 import BreedCardImage from "./BreedCardImage";
 import Link from "next/link";
 
-const BreedCard = ({ breed = {} }) => {
+const BreedCard = ({ breed = {}, favorite }) => {
   return (
-    <div className="flex flex-col w-40 rounded-2xl gap-2 shadow shrink ">
-      <BreedCardImage breed={breed} isFavorite="false" />
+    <div className="flex flex-col w-40 rounded-2xl gap-2 shadow  ">
+      <BreedCardImage breed={breed} isFavorite="false" favorite={favorite} />
       <Link href={`/detailview/${breed.id}`}>
         <div className="flex flex-col gap-1 px-2.75 mb-3.5">
           <h3 className="font-bold text-[15px] ">

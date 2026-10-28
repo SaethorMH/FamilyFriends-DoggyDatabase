@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "@/app/components/FavoriteButton";
 
-const BreedCardImage = ({ breed = {} }) => {
+const BreedCardImage = ({ breed = {}, favorite }) => {
   return (
     <div className="grid grid-cols-1 w-full grid-rows-[114px]">
       <Link
@@ -21,6 +21,7 @@ const BreedCardImage = ({ breed = {} }) => {
       <FavoriteButton
         slug={String(breed.id)}
         id={breed.image.id}
+        favorite={favorite}
         className="col-start-1 row-start-1 justify-self-end self-start m-2 size-6"
       />
     </div>
